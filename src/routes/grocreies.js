@@ -19,7 +19,9 @@ const groceries = [
 ];
 
 router.use((req, res, next) => {
-    if (req.session.user) next()
+    console.log("inside groceries Auth Check middleware")
+    console.log(req.user)
+    if (req.user) next()
     else res.send(401)
 
 })
